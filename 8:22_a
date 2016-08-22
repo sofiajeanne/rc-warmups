@@ -1,0 +1,26 @@
+=begin
+Write a function that takes 
+a list of numbers and
+a number n. 
+
+Split the input list into n lists, where all the elements in 
+each list are the same mod n.
+
+E.g. mods([9, 5, 3, 302], 3) ->
+    [
+        [9, 3],     # 0 mod 3
+        [],         # 1 mod 3 - none
+        [5, 302]    # 2 mod 3
+    ]
+=end
+
+def mods(array, n)
+  mama_array = Array.new(n) { [] }
+  array.each do |num|
+    remainder = num % n
+    mama_array[remainder] << num
+  end
+  puts mama_array.inspect
+end
+
+mods([9, 5, 3, 302], 3)
