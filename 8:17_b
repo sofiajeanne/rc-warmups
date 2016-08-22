@@ -1,0 +1,19 @@
+=begin
+Write a function that takes 2 numbers, and returns 
+the smallest prefix of the 2nd that is a multiple of the 1st.
+
+multy(8, 216500) -> 216
+multy(5, 1234) -> None
+=end
+
+def multy(num1, num2)
+  string2 = num2.to_s
+  counter = 0
+  until string2[0..counter].to_i % num1 == 0
+    counter += 1
+    if counter == string2.size - 1
+      return nil
+    end
+  end
+  string2[0..counter].to_i
+end

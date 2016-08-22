@@ -20,5 +20,3 @@ def mods(array, n)
   end
   puts mama_array.inspect
 end
-
-mods([9, 5, 3, 302], 3)
