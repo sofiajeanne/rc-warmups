@@ -1,7 +1,5 @@
 =begin
-Write a function that takes 
-a list of numbers and
-a number n. 
+Write a function that takes a list of numbers and a number n. 
 
 Split the input list into n lists, where all the elements in 
 each list are the same mod n.
