@@ -1,0 +1,28 @@
+=begin
+plusone: write a function that takes a string
+and increments all the numbers that appear in it
+
+plusone("1 + 15 = 16")
+=>"2 + 16 = 17"
+
+plusone("call me at 3.555-2020")
+=>"call me at 4.555-2019"
+=end
+
+
+def plusone(string)
+  og_nums = string.scan(/-?\d*\.?\d+/)
+  trans_nums = og_nums.map do |element|
+    if element.to_f == element.to_i
+      (element.to_i + 1).to_s
+    else
+      (element.to_f + 1).to_s
+    end
+  end
+  hash = Hash[og_nums.zip trans_nums]
+  hash = hash.sort_by {|k, v| k}.reverse
+  hash.each do |k, v|
+    string.sub!(k, v)
+  end
+  p string
+end
